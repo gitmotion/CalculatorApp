@@ -1,5 +1,5 @@
 # Calculator App
-Created just for fun
+Just a fun little project created one a free night
 
 ![calcapp-demo](https://github.com/user-attachments/assets/fa4c2c90-8387-4c9b-8ccb-2f70bb68d7c6)
 
