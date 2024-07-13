@@ -20,13 +20,12 @@ namespace CalculatorApp
             if (e.KeyCode == Keys.Escape)
             {
                 ClearInput();
-                return;
             }
             else if (e.KeyCode == Keys.Enter)
             {
                 buttonEnter_Click(sender, e);
-                return;
             }
+            InputBox.Text.Trim();
         }
         #endregion
 
@@ -37,61 +36,51 @@ namespace CalculatorApp
 
         private void button0_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "0";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "1";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "2";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "3";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "4";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "5";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "6";
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "7";
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "8";
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "9";
         }
 
@@ -140,19 +129,16 @@ namespace CalculatorApp
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "-";
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "*";
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-            RemoveLeadingZeros();
             InputBox.Text += "+";
         }
 
@@ -168,7 +154,8 @@ namespace CalculatorApp
 
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
-            
+            RemoveLeadingZeros();
+            InputBox.Text.Trim();
         }
 
         // custom functions
@@ -219,7 +206,6 @@ namespace CalculatorApp
         private void ClearInput()
         {
             InputBox.Clear();
-            InputBox.Text = "0";
         }
     }
 }
