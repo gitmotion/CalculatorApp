@@ -14,6 +14,11 @@ namespace CalculatorApp
             KeyDown += new KeyEventHandler(Calculator_KeyDown);
         }
 
+        private void Calculator_Load(object sender, EventArgs e)
+        {
+            ClearInput();
+        }
+
         #region KeyPresses
         private void Calculator_KeyDown(object sender, KeyEventArgs e)
         {
@@ -25,15 +30,34 @@ namespace CalculatorApp
             {
                 buttonEnter_Click(sender, e);
             }
+        }
+        #endregion
+
+        #region InputBox
+        private void InputBox_TextChanged(object sender, EventArgs e)
+        {
+            string input = InputBox.Text.Trim();
+
+            // Allowed characters for a calculator input
+            string validCharacters = "0123456789+-*/.";
+
+            // Filter out invalid characters
+            foreach (char c in input)
+            {
+                if (!validCharacters.Contains(c))
+                {
+                    InputBox.Text = input.Replace(c.ToString(), "");
+                    InputBox.SelectionStart = InputBox.Text.Length; // Keep the cursor at the end
+                    return;
+                }
+            }
+
+            RemoveLeadingZeros();
             InputBox.Text.Trim();
         }
         #endregion
 
-        private void Calculator_Load(object sender, EventArgs e)
-        {
-            ClearInput();
-        }
-
+        #region Buttons
         private void button0_Click(object sender, EventArgs e)
         {
             InputBox.Text += "0";
@@ -151,14 +175,9 @@ namespace CalculatorApp
         {
             InputBox.Text += "/";
         }
+        #endregion
 
-        private void InputBox_TextChanged(object sender, EventArgs e)
-        {
-            RemoveLeadingZeros();
-            InputBox.Text.Trim();
-        }
-
-        // custom functions
+        #region Custom Methods
         private void RemoveLeadingZeros()
         {
             if (string.IsNullOrEmpty(InputBox.Text))
@@ -201,11 +220,13 @@ namespace CalculatorApp
         private void PrintResult(string result)
         {
             InputBox.Text = result;
+            InputBox.SelectionStart = InputBox.Text.Length;
         }
 
         private void ClearInput()
         {
             InputBox.Clear();
         }
+        #endregion
     }
 }
