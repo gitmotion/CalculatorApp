@@ -225,10 +225,9 @@
             // InputBox
             // 
             this.InputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputBox.Location = new System.Drawing.Point(27, 21);
-            this.InputBox.Multiline = true;
+            this.InputBox.Location = new System.Drawing.Point(27, 35);
             this.InputBox.Name = "InputBox";
-            this.InputBox.Size = new System.Drawing.Size(286, 54);
+            this.InputBox.Size = new System.Drawing.Size(286, 26);
             this.InputBox.TabIndex = 17;
             this.InputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.InputBox.UseWaitCursor = true;
