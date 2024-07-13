@@ -177,7 +177,7 @@ namespace CalculatorApp
         }
         #endregion
 
-        // Custom Methods
+        #region Custom Methods
         private void RemoveLeadingZeros()
         {
             if (string.IsNullOrEmpty(InputBox.Text))
@@ -227,5 +227,6 @@ namespace CalculatorApp
         {
             InputBox.Clear();
         }
+        #endregion
     }
 }
