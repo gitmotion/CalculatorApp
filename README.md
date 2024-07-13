@@ -5,6 +5,8 @@ Created just for fun
 
 ## Version 1
 - Basic Addition, Subtraction, Multiplication, Division functionality
+- Button Functionality
 - ESC key clears the input
+- Hitting Enter key after typing in input executes calculation
 - For the moment only accepts 2 values and an operator
 
